@@ -1,17 +1,21 @@
 //
 //  AppDelegate.h
-//  defineTheTabbar
+//  WitnessSystem
 //
-//  Created by 钟文成(外包) on 16/8/26.
-//  Copyright © 2016年 钟文成(外包). All rights reserved.
+//  Created by 张森 on 15/12/30.
+//  Copyright © 2015年 张森. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "BMKMapManager.h"
+#import "ZSTabBarController.h"
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    UINavigationController *navigationController;
+    BMKMapManager* _mapManager;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
-
+@property (strong, nonatomic) ZSTabBarController * tabbar;
+-(void)showWindowHome:(NSString*)windowType;
 @end
 

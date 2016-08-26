@@ -1,0 +1,56 @@
+//
+//  WitnessSystem.pch
+//  WitnessSystem
+//
+//  Created by 张森 on 16/1/9.
+//  Copyright © 2016年 张森. All rights reserved.
+//
+
+#ifndef WitnessSystem_pch
+#define WitnessSystem_pch
+#import "Masonry.h"
+#import "UIImageView+WebCache.h"
+#import "NSString+StringLine.h"
+#import "AlertViewController.h"
+#import "ZSWindow.h"
+#import "SVProgressHUD.h"
+#import "WitnessUserData.h"
+#import "ConnectionManager.h"
+#import "GTMBase64.h"
+#import "RSA.h"
+#import "notificationDataManager.h"
+#define PUB_KEY @"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjWbB6iaTw34LIe+ZGV+ZrJwSUVMPtsZNeryTFMBPeE0BB7ihfMPWITnCUxhdW3dS5K50P4SiqKx5+4qSo9bO5q8dxv/nifpQ+cFKXTwWWdmnMWXUeMImWHVyybPj3XeTZcRPf6ksPOYa4mfZq/ELJA/t6fEdshOU2YIgGKQfVXQIDAQAB\n-----END PUBLIC KEY-----"
+#define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+#define kRESOLUTION ([UIScreen mainScreen].bounds.size.height / 736)
+#define kRESOLUTIONW ([UIScreen mainScreen].bounds.size.width / 414)
+#define kSYSTEMGARY [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:0.8]
+#define kWATERARY [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:0.2]
+#define kORANGECOLOR [UIColor colorWithRed:255/255.0 green:90/255.0 blue:32/255.0 alpha:1]
+
+#define kFONT(font) [UIFont systemFontOfSize:font*kRESOLUTION]
+
+#define kNORMALFONT kFONT(17)
+#define kDETAILFONT kFONT(15)
+#define kTITLEFONT kFONT(19)
+#define kBIGTITLEFONT kFONT(22)
+#define kHEADERBOLDFONT kBOLDDFONT(17)//列表中加粗字体
+#define kSMALLFONT kFONT(13.0)//详情照片字体
+static const CGFloat keyBoardHeight = 216;
+
+#define OutOfDate 60 * 60 * 24 *10
+#ifdef DEBUG
+#   define NSLog(...) NSLog(__VA_ARGS__)
+#define WITNESSHTTPS @"https://test-nts-ows-gzh.pa18.com:33443/"
+#else
+#   define NSLog(...)
+#define WITNESSHTTPS @"https://nts-ows-gzh.pa18.com/"
+#define WITNESSVERSIONURL @"http://itunes.apple.com/lookup?id="
+#endif
+
+#import "DetailTask.h"
+#import "PanExtension/PanViewDetail.h"
+#import "PanExtension/UIApplication+UIApplication.h"
+#import "PanExtension/UIButton+UIButton.h"
+#import "PanExtension/UILabel+UILabel.h"
+#endif /* WitnessSystem_pch */
