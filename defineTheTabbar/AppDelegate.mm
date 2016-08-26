@@ -9,13 +9,9 @@
 #import "AppDelegate.h"
 #import "NavigationController.h"
 #import "ViewController.h"
-#import "ZSViewController.h"
-#import "ManagerCenterController.h"
-#import "LoginViewController.h"
-#import "InfoCenterViewController.h"
-#import "notificateDataModel.h"
-#import "PushManager.h"
-@interface AppDelegate ()<UIAlertViewDelegate,PushManagerDelegate,DeviceTokenDelegate>{
+#import "ViewController1.h"
+#import "ViewController2.h"
+@interface AppDelegate ()<UIAlertViewDelegate>{
     ZSTabBarController *_loginTabbar;
     NavigationController * _navigation;
     NavigationController * _infoNavigation;
@@ -31,67 +27,17 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    _isNotification = NO;
-    NSDictionary * userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-//    if (![userInfo isKindOfClass:[NSNull class]]) {
-//        [[NSUserDefaults standardUserDefaults] setObject:userInfo forKey:@"user_info"];
-//    }
    
-    
-    if (application.applicationIconBadgeNumber != 0) {
-//    
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"didFinishLaunching" message:[NSString stringWithFormat:@"didFinishLaunching：\n%@",launchOptions] delegate:self cancelButtonTitle:@"Cancek" otherButtonTitles:@"OK", nil];
-//                [alert show];
-//                alert.tag = 101;
-    }
-    if(userInfo)
-    {
-        //点击推送进来后
-//        NSLog(@"==userInfo==%@",userInfo);
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"didFinishLaunching" message:[NSString stringWithFormat:@"didFinishLaunching：\n%@",launchOptions] delegate:self cancelButtonTitle:@"Cancek" otherButtonTitles:@"OK", nil];
-//        [alert show];
-//        alert.tag = 101;
-    }
-    
-   [PushManager startPushServicePushDelegate:self tokenDelegate:self];
-    
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(roleChange:) name:@"role" object:nil];
-    
-    
     _tabbar = [[ZSTabBarController alloc]init];
     ViewController * viewController = [[ViewController alloc]init];
     _navigation = [[NavigationController alloc]initWithRootViewController:viewController];
-    InfoCenterViewController * infoViewController = [[InfoCenterViewController alloc]init];
+    ViewController1 * infoViewController = [[ViewController1 alloc]init];
     _infoNavigation = [[NavigationController alloc]initWithRootViewController:infoViewController];
-    _managerNavigation = [[NavigationController alloc]initWithRootViewController:[[ManagerCenterController alloc]init]];
-    _tabbar.viewControllers = @[_navigation,_infoNavigation];
+    _managerNavigation = [[NavigationController alloc]initWithRootViewController:[[ViewController2 alloc]init]];
+    _tabbar.viewControllers = @[_navigation,_infoNavigation,_managerNavigation];
     self.window.rootViewController = _tabbar;
-    //[self requestVersion];
-    _mapManager = [[BMKMapManager alloc]init];
-    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-    BOOL ret = [_mapManager start:@"UkIOX8hn5uVUUY8QTVaLLk5TaQvnHR00"  generalDelegate:nil];
-    if (!ret) {
-        NSLog(@"manager start failed!");
-    }
-    self.isLocation = ret;
-    //重置角色选择
-    //[[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"changedRole"];
-    //[[NSUserDefaults standardUserDefaults] setObject:@0 forKey:@"isRoleChanged"];
-    //[self requestVersion];
-   
     return YES;
 }
-
-
--(void)didReciveDeviceToken:(NSString *)deviceToken
-{
-    NSLog(@"=======didReciveDeviceToken:%@===========",deviceToken);
-    [WitnessUserData witnessUserDataManager].deviceToken = deviceToken;
-    
-}
-
-
 - (void)requestVersion{
 //    @"http://itunes.apple.com/lookup"
     NSString * urlString = [NSString stringWithFormat:@"https://test-nts-ows-gzh.pa18.com:33443/apk/lookup.do?id=%@",@"com.pingan.RunWitnessSystemTest"];
@@ -225,7 +171,7 @@
         //[[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"changedRole"];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"gestureOne"];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"gestureTwo"];
-        [WitnessUserData witnessUserDataManager].changedRole = nil;
+       
         [_tabbar setSelectedIndex:0];
         self.window.rootViewController = _tabbar;
         
@@ -239,97 +185,12 @@
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"requestMessage" object:nil];
 //    }
     [self requestVersion];
-    if ([WitnessUserData witnessUserDataManager].gestureType == LOG_PASSWORD) {
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"hiddenBadge" object:@"NO_INFOCENTER_password"];
-    }
+   
 
 }
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
-    /*
-     UIBackgroundFetchResultNewData, 成功接收到数据
-     UIBackgroundFetchResultNoData, 没有;接收到数据
-     UIBackgroundFetchResultFailed 接收失败
-     
-     */
-    NSLog(@"didReceiveRemoteNotification%@",userInfo);
-    NSDictionary *aps = userInfo[@"aps"];
-    NSDictionary *alert = aps[@"alert"];
-    NSString *body = alert[@"body"];
-    notificateDataModel *dbModel = [[notificateDataModel alloc] init];
-    dbModel.msgID = userInfo[@"id"];
-    NSString *contentStr = [NSString stringWithFormat:@"运营见证系统消息\n%@",body];
-    dbModel.content = contentStr;
-    NSDate *date = [NSDate date];
-    NSTimeInterval time = [date timeIntervalSince1970];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSString *timeStr = [formatter stringFromDate:date];
-    dbModel.date = timeStr;
-    dbModel.time = time;
-    BOOL flag = YES;
-    _isNotification = YES;
-    if (flag) {
-        NSLog(@"数据库写入成功%lu",(unsigned long)body.length);
-        //[dbManager selectRemoteNotificateDataModel];..
-        _isNotification = NO;
-        NSInteger badgeValue = _infoNavigation.tabBarItem.badgeValue.integerValue;
-        
-//        _infoNavigation.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",badgeValue+1];
-//        [UIApplication sharedApplication].applicationIconBadgeNumber=_infoNavigation.tabBarItem.badgeValue.integerValue;
-        [UIApplication sharedApplication].applicationIconBadgeNumber = _badgeValue ++;
-        NSLog(@"徽标%@",_infoNavigation.tabBarItem.badgeValue);
 
-        application.applicationIconBadgeNumber =badgeValue + 1;
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"hiddenBadge" object:@"NO"];
-    }else{
-        NSLog(@"数据库写入失败");
-    }
-    
-    NSNumber *contentid =  userInfo[@"id"];
-    if (contentid) {
-        completionHandler(UIBackgroundFetchResultNewData);
-    }else
-    {
-        completionHandler(UIBackgroundFetchResultFailed);
-    }
-    
-}
-#pragma mark PushManagerDelegate
-- (BOOL)onMessage:(NSString *)title  content:(NSString *)content   extention:(NSDictionary *)extention
-{
-    //在这里您可以处理收到的消息内容
-    
-   // NSLog(@"onMessage:(NSString *)title : %@ \n content : %@ \n extention : %@ \n",title,content,[extention description]);
-//    notificateDataModel *dbModel = [[notificateDataModel alloc] init];
-//    dbModel.msgID = extention[@"id"];
-//    NSString *contentStr = [NSString stringWithFormat:@"运营见证系统消息\n%@",content];
-//    dbModel.content = contentStr;
-//    NSDate *date = [NSDate date];
-//    NSTimeInterval time = [date timeIntervalSince1970];
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-//    NSString *timeStr = [formatter stringFromDate:date];
-//    dbModel.date = timeStr;
-//    dbModel.time = time;
-    //notificationDataManager *dbManager = [notificationDataManager notificateDataManager];
-   //BOOL flag =  [dbManager addRemoteNotificateData:dbModel];
-//    BOOL flag = NO;
-//    if (flag) {
-//        NSLog(@"数据库写入成功");
-//       // [dbManager selectRemoteNotificateDataModel];
-////        NSInteger badgeValue = _infoNavigation.tabBarItem.badgeValue.integerValue;
-////        _infoNavigation.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",badgeValue+1];
-////        NSLog(@"徽标%@",_infoNavigation.tabBarItem.badgeValue);
-//        [[NSNotificationCenter defaultCenter]postNotificationName:@"hiddenBadge" object:@"NO"];
-//    }else{
-//        NSLog(@"数据库写入失败");
-//    }
-    
-    return YES;
-}
 
 @end

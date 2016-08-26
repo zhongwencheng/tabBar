@@ -61,6 +61,7 @@
     if (!_titleLabel)
     {
         UILabel *label = [self createLabelWithTextColor:[UIColor lightGrayColor] font:[UIFont systemFontOfSize:13] textAlignment:NSTextAlignmentCenter];
+        label.backgroundColor = [UIColor greenColor];
         [self addSubview:label];
         
         _titleLabel = label;

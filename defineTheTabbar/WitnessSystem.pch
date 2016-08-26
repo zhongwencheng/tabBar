@@ -5,20 +5,10 @@
 //  Created by 张森 on 16/1/9.
 //  Copyright © 2016年 张森. All rights reserved.
 //
-
+#import <UIKit/UIKit.h>
 #ifndef WitnessSystem_pch
 #define WitnessSystem_pch
-#import "Masonry.h"
-#import "UIImageView+WebCache.h"
-#import "NSString+StringLine.h"
-#import "AlertViewController.h"
-#import "ZSWindow.h"
-#import "SVProgressHUD.h"
-#import "WitnessUserData.h"
-#import "ConnectionManager.h"
-#import "GTMBase64.h"
-#import "RSA.h"
-#import "notificationDataManager.h"
+
 #define PUB_KEY @"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjWbB6iaTw34LIe+ZGV+ZrJwSUVMPtsZNeryTFMBPeE0BB7ihfMPWITnCUxhdW3dS5K50P4SiqKx5+4qSo9bO5q8dxv/nifpQ+cFKXTwWWdmnMWXUeMImWHVyybPj3XeTZcRPf6ksPOYa4mfZq/ELJA/t6fEdshOU2YIgGKQfVXQIDAQAB\n-----END PUBLIC KEY-----"
 #define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
@@ -48,9 +38,5 @@ static const CGFloat keyBoardHeight = 216;
 #define WITNESSVERSIONURL @"http://itunes.apple.com/lookup?id="
 #endif
 
-#import "DetailTask.h"
-#import "PanExtension/PanViewDetail.h"
-#import "PanExtension/UIApplication+UIApplication.h"
-#import "PanExtension/UIButton+UIButton.h"
-#import "PanExtension/UILabel+UILabel.h"
+
 #endif /* WitnessSystem_pch */

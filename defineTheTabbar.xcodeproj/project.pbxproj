@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		94CFF8971D70104900D1A41A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8961D70104900D1A41A /* main.m */; };
-		94CFF89A1D70104900D1A41A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8991D70104900D1A41A /* AppDelegate.m */; };
 		94CFF89D1D70104900D1A41A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF89C1D70104900D1A41A /* ViewController.m */; };
 		94CFF8A01D70104900D1A41A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CFF89E1D70104900D1A41A /* Main.storyboard */; };
 		94CFF8A21D70104900D1A41A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94CFF8A11D70104900D1A41A /* Assets.xcassets */; };
 		94CFF8A51D70104900D1A41A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CFF8A31D70104900D1A41A /* LaunchScreen.storyboard */; };
 		94CFF8B01D70104A00D1A41A /* defineTheTabbarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8AF1D70104A00D1A41A /* defineTheTabbarTests.m */; };
 		94CFF8BB1D70104A00D1A41A /* defineTheTabbarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8BA1D70104A00D1A41A /* defineTheTabbarUITests.m */; };
+		94CFF8CA1D7010A300D1A41A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8C91D7010A300D1A41A /* AppDelegate.mm */; };
+		94CFF8D01D70111300D1A41A /* ZSTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8CC1D70111300D1A41A /* ZSTabBarButton.m */; };
+		94CFF8D11D70111300D1A41A /* ZSTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8CF1D70111300D1A41A /* ZSTabBarView.m */; };
+		94CFF8D31D70112000D1A41A /* ZSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8D21D70112000D1A41A /* ZSTabBarController.m */; };
+		94CFF8D61D70118D00D1A41A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8D51D70118D00D1A41A /* UIView+Frame.m */; };
+		94CFF8D91D7011C100D1A41A /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8D81D7011C100D1A41A /* NavigationController.m */; };
+		94CFF8DE1D7015E100D1A41A /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8DD1D7015E100D1A41A /* ViewController1.m */; };
+		94CFF8E11D7015FB00D1A41A /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CFF8E01D7015FB00D1A41A /* ViewController2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +44,6 @@
 /* Begin PBXFileReference section */
 		94CFF8921D70104900D1A41A /* defineTheTabbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = defineTheTabbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CFF8961D70104900D1A41A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		94CFF8981D70104900D1A41A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		94CFF8991D70104900D1A41A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		94CFF89B1D70104900D1A41A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		94CFF89C1D70104900D1A41A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		94CFF89F1D70104900D1A41A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +56,23 @@
 		94CFF8B61D70104A00D1A41A /* defineTheTabbarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = defineTheTabbarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CFF8BA1D70104A00D1A41A /* defineTheTabbarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = defineTheTabbarUITests.m; sourceTree = "<group>"; };
 		94CFF8BC1D70104A00D1A41A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94CFF8C81D70109200D1A41A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		94CFF8C91D7010A300D1A41A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		94CFF8CB1D70111300D1A41A /* ZSTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSTabBarButton.h; sourceTree = "<group>"; };
+		94CFF8CC1D70111300D1A41A /* ZSTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSTabBarButton.m; sourceTree = "<group>"; };
+		94CFF8CD1D70111300D1A41A /* ZSTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSTabBarController.h; sourceTree = "<group>"; };
+		94CFF8CE1D70111300D1A41A /* ZSTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSTabBarView.h; sourceTree = "<group>"; };
+		94CFF8CF1D70111300D1A41A /* ZSTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSTabBarView.m; sourceTree = "<group>"; };
+		94CFF8D21D70112000D1A41A /* ZSTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSTabBarController.m; sourceTree = "<group>"; };
+		94CFF8D41D70118D00D1A41A /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		94CFF8D51D70118D00D1A41A /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		94CFF8D71D7011C100D1A41A /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		94CFF8D81D7011C100D1A41A /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		94CFF8DA1D70120F00D1A41A /* WitnessSystem.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WitnessSystem.pch; sourceTree = "<group>"; };
+		94CFF8DC1D7015E100D1A41A /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		94CFF8DD1D7015E100D1A41A /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		94CFF8DF1D7015FB00D1A41A /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		94CFF8E01D7015FB00D1A41A /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +123,15 @@
 		94CFF8941D70104900D1A41A /* defineTheTabbar */ = {
 			isa = PBXGroup;
 			children = (
-				94CFF8981D70104900D1A41A /* AppDelegate.h */,
-				94CFF8991D70104900D1A41A /* AppDelegate.m */,
-				94CFF89B1D70104900D1A41A /* ViewController.h */,
-				94CFF89C1D70104900D1A41A /* ViewController.m */,
+				94CFF8DB1D70150800D1A41A /* tabBar */,
+				94CFF8C81D70109200D1A41A /* AppDelegate.h */,
+				94CFF8C91D7010A300D1A41A /* AppDelegate.mm */,
+				94CFF8D41D70118D00D1A41A /* UIView+Frame.h */,
+				94CFF8D51D70118D00D1A41A /* UIView+Frame.m */,
+				94CFF8D71D7011C100D1A41A /* NavigationController.h */,
+				94CFF8D81D7011C100D1A41A /* NavigationController.m */,
+				94CFF8E21D70264A00D1A41A /* viewcontrolers */,
+				94CFF8DA1D70120F00D1A41A /* WitnessSystem.pch */,
 				94CFF89E1D70104900D1A41A /* Main.storyboard */,
 				94CFF8A11D70104900D1A41A /* Assets.xcassets */,
 				94CFF8A31D70104900D1A41A /* LaunchScreen.storyboard */,
@@ -138,6 +165,32 @@
 				94CFF8BC1D70104A00D1A41A /* Info.plist */,
 			);
 			path = defineTheTabbarUITests;
+			sourceTree = "<group>";
+		};
+		94CFF8DB1D70150800D1A41A /* tabBar */ = {
+			isa = PBXGroup;
+			children = (
+				94CFF8CB1D70111300D1A41A /* ZSTabBarButton.h */,
+				94CFF8CC1D70111300D1A41A /* ZSTabBarButton.m */,
+				94CFF8CD1D70111300D1A41A /* ZSTabBarController.h */,
+				94CFF8D21D70112000D1A41A /* ZSTabBarController.m */,
+				94CFF8CE1D70111300D1A41A /* ZSTabBarView.h */,
+				94CFF8CF1D70111300D1A41A /* ZSTabBarView.m */,
+			);
+			name = tabBar;
+			sourceTree = "<group>";
+		};
+		94CFF8E21D70264A00D1A41A /* viewcontrolers */ = {
+			isa = PBXGroup;
+			children = (
+				94CFF89B1D70104900D1A41A /* ViewController.h */,
+				94CFF89C1D70104900D1A41A /* ViewController.m */,
+				94CFF8DC1D7015E100D1A41A /* ViewController1.h */,
+				94CFF8DD1D7015E100D1A41A /* ViewController1.m */,
+				94CFF8DF1D7015FB00D1A41A /* ViewController2.h */,
+				94CFF8E01D7015FB00D1A41A /* ViewController2.m */,
+			);
+			name = viewcontrolers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +323,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CFF8D31D70112000D1A41A /* ZSTabBarController.m in Sources */,
+				94CFF8D01D70111300D1A41A /* ZSTabBarButton.m in Sources */,
+				94CFF8D11D70111300D1A41A /* ZSTabBarView.m in Sources */,
+				94CFF8D61D70118D00D1A41A /* UIView+Frame.m in Sources */,
 				94CFF89D1D70104900D1A41A /* ViewController.m in Sources */,
-				94CFF89A1D70104900D1A41A /* AppDelegate.m in Sources */,
+				94CFF8D91D7011C100D1A41A /* NavigationController.m in Sources */,
+				94CFF8CA1D7010A300D1A41A /* AppDelegate.mm in Sources */,
+				94CFF8E11D7015FB00D1A41A /* ViewController2.m in Sources */,
 				94CFF8971D70104900D1A41A /* main.m in Sources */,
+				94CFF8DE1D7015E100D1A41A /* ViewController1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +473,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = "/Users/ex-zhongwencheng001/Desktop/defineTheTabbar/defineTheTabbar/WitnessSystem.pch";
 				INFOPLIST_FILE = defineTheTabbar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DzGroup.defineTheTabbar;
@@ -424,6 +486,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = "/Users/ex-zhongwencheng001/Desktop/defineTheTabbar/defineTheTabbar/WitnessSystem.pch";
 				INFOPLIST_FILE = defineTheTabbar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DzGroup.defineTheTabbar;

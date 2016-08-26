@@ -17,8 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor redColor];
+    
 }
-
+-(instancetype)init{
+    self=[super init];
+    if (self) {
+        self.tabBarItem.image = [UIImage imageNamed:@"teskMan2"];
+        self.tabBarItem.selectedImage = [UIImage imageNamed:@"teskMan"];
+    }
+    return self;
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

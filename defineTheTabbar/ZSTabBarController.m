@@ -8,7 +8,7 @@
 
 #import "ZSTabBarController.h"
 #import "UIView+Frame.h"
-#import "notificateDataModel.h"
+
 @interface ZSTabBarController ()
 {
     didSelectedBarBlock _block;
